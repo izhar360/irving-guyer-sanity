@@ -24,13 +24,13 @@ export default {
 
     preview: {
       select: {
-        title: 'author',
-        subtitle: 'text',
+        author: 'author',
+        text: 'text',
       },
-      prepare({ title, subtitle }) {
+      prepare({ author, text }) {
         return {
-          title: title || 'Unknown Author',  // Fallback if no author is provided
-          subtitle: subtitle ? subtitle.substring(0, 50) + '...' : 'No quote text',  // Show first 50 characters of the quote
+          title: 'Quote',
+          subtitle: `${author ? author : 'Unknown Author'} - ${text ? text.substring(0, 50) + '...' : 'No quote text'}`,
         };
       },
     },

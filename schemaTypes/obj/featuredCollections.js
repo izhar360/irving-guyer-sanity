@@ -36,5 +36,20 @@ export default {
         description: 'A list of collections to be featured in this section.',
       },
     ],
+
+    preview: {
+      select: {
+        media: 'coverImage',
+        title: 'title',
+      },
+      prepare({ media, title }) {
+        return {
+          title: 'Featured Collection',
+          media: media,
+          subtitle: title || 'No title provided',
+        };
+      },
+    },
   };
+  
   

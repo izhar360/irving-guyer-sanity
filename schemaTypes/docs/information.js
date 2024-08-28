@@ -30,6 +30,12 @@ export default {
       description: 'Title of the information page.',
     },
     {
+      name: 'slug',
+      type: 'slug',
+      options: { source: 'title' },
+     
+    },
+    {
       name: 'biography',
       title: 'Biography',
       type: 'biography',

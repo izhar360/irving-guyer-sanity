@@ -33,6 +33,12 @@ export default {
         type: 'string',
         description: 'The year the artwork was created, e.g., "1970".',
       },
+      {
+        name: 'collection',
+        title: 'Collection',
+        type: 'reference',
+        to: [{ type: 'collection' }],
+      },
     ],
   };
   

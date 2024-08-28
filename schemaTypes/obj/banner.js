@@ -20,6 +20,8 @@ export default {
       of: [{ type: 'reference', to: [{ type: 'artwork' }] }],
       description: 'Select the artworks to display in the banner.',
     },
+
+  
   ],
 
   preview: {

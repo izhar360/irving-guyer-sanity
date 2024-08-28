@@ -24,6 +24,25 @@ export default {
       fields: [
         // Links
         {
+          name: 'logoText',
+          title: 'Logo Text',
+          type: 'object',
+          fields: [
+            {
+              name: 'line1',
+              title: 'First Line',
+              type: 'string',
+              description: 'Text for the first line of the logo, e.g., "the estate of"',
+            },
+            {
+              name: 'line2',
+              title: 'Second Line',
+              type: 'string',
+              description: 'Text for the second line of the logo, typically the artist\'s name',
+            },
+          ],
+        },
+        {
           name: 'links',
           title: 'Links',
           type: 'array',

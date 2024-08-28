@@ -17,6 +17,12 @@ export default {
       description: 'The title of the home page.',
     },
     {
+      name: 'slug',
+      type: 'slug',
+      options: { source: 'title' },
+     
+    },
+    {
       name: 'blocks',
       title: 'Blocks',
       type: 'array',

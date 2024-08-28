@@ -15,6 +15,12 @@ export default {
         type: 'string',
         description: 'The title of the page.',
       },
+      {
+        name: 'slug',
+        type: 'slug',
+        options: { source: 'title' },
+       
+      },
     {
       name: 'email',
       title: 'Contact Email',

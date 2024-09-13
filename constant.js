@@ -2,6 +2,7 @@ export const BLOCKS = [
     { type: 'banner' },
     { type: 'quote' },
     { type: 'featuredCollections' },
+    { type: 'linkInternal' }
   ];
 
 

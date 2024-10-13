@@ -14,6 +14,21 @@ export default {
         description: 'The title of the collection.',
       },
       {
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+          source: 'title',  // Automatically generate the slug from the title
+          maxLength: 96,    // Optional: limit slug length
+          slugify: input => input
+            .toLowerCase() // Convert to lowercase
+            .replace(/\s+/g, '-') // Replace spaces with dashes
+            .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+            .replace(/\-\-+/g, '-') // Replace multiple dashes with a single dash
+            .trim(), // Trim any leading/trailing dashes
+        },
+      },
+      {
         name: 'description',
         title: 'Description',
         type: 'text',

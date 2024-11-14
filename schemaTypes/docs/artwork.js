@@ -18,7 +18,7 @@ export default {
 
       {
         name: 'titleTest',
-        title: 'Title (Test)',
+        title: 'Title',
         type: 'array',
         of: [
           {
@@ -44,24 +44,8 @@ export default {
         ],
         description: 'The title and additional details of the artwork, allowing various text styles for emphasis.',
       },
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string',
-        description: 'The title of the artwork, e.g., "Tennesse valley".',
-      },
-      {
-        name: 'medium',
-        title: 'Medium',
-        type: 'string',
-        description: 'The medium of the artwork, e.g., "oil on canvas".',
-      },
-      {
-        name: 'year',
-        title: 'Year',
-        type: 'string',
-        description: 'The year the artwork was created, e.g., "1970".',
-      },
+   
+  
       {
         name: 'collection',
         title: 'Collection',

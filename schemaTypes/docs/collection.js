@@ -48,21 +48,8 @@ export default {
         type: 'string',
         description: 'The date range that the collection covers (if applicable).',
       },
-      {
-        name: 'artworks',
-        title: 'Artworks',
-        type: 'array',
-        of: [{ type: 'reference', to: [{ type: 'artwork' }] }],
-        description: 'A list of artworks included in this collection.',
-      },
+     
 
-      {
-        name: 'category',
-        title: 'Category',
-        type: 'reference',
-        to: [{ type: 'category' }],
-        description: 'Select a category for this collection.',
-      },
 
     
 

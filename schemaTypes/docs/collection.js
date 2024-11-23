@@ -49,23 +49,12 @@ export default {
         description: 'The date range that the collection covers (if applicable).',
       },
      
-
-
-    
-
       {
-        name: 'imageFirst',
-        title: 'Image First',
-        type: 'boolean',
-        description: 'If set to true, the image will be displayed on the left side of the component.',
-      },
-
-      {
-        name: 'imageMargin',
-        title: 'Image Margin',
-        type: 'boolean',
-        description: 'Apply margin to the collection image.',
-        initialValue: true,
+        name: 'artworks',
+        title: 'Artworks',
+        type: 'array',
+        of: [{ type: 'reference', to: [{ type: 'artwork' }] }],
+        description: 'Select artworks included in this collection.',
       },
 
     ],

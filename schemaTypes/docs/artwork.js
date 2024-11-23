@@ -46,12 +46,7 @@ export default {
       },
    
   
-      {
-        name: 'collection',
-        title: 'Collection',
-        type: 'reference',
-        to: [{ type: 'collection' }],
-      },
+     
     ],
   };
   

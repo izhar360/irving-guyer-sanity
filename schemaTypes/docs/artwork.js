@@ -15,6 +15,7 @@ export default {
           hotspot: true,
         },
       },
+      
 
       {
         name: 'titleTest',
@@ -43,6 +44,7 @@ export default {
           },
         ],
         description: 'The title and additional details of the artwork, allowing various text styles for emphasis.',
+        validation: Rule => Rule.required().error('Title is required.')
       },
    
   

@@ -39,7 +39,23 @@ export default {
                 { title: 'Underline', value: 'underline' },
                 { title: 'Strikethrough', value: 'strike-through' },
               ],
-              annotations: [] // Disable external links or annotations
+              annotations: [
+                {
+                  name: 'link',
+                  type: 'object',
+                  title: 'Link',
+                  fields: [
+                    {
+                      name: 'href',
+                      title: 'URL',
+                      type: 'url',
+                      validation: (Rule) => Rule.uri({
+                        scheme: ['http', 'https'], // Ensure it’s a valid HTTP or HTTPS URL
+                      }),
+                    },
+                  ],
+                },
+              ],
             },
           },
         ],

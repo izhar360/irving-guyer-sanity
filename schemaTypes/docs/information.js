@@ -1,7 +1,5 @@
 import { RiQuillPenLine } from "react-icons/ri";
 
-
-
 export default {
   name: 'information',
   title: 'Information',
@@ -9,18 +7,21 @@ export default {
   type: 'document',
   groups: [
     {
-    
       name: 'biography',
-      title: 'Biography'
+      title: 'Biography',
     },
     {
       name: 'cv',
-      title: 'Curriculum Vitae'
+      title: 'Curriculum Vitae',
     },
     {
       name: 'writing',
-      title: 'Writing'
-    }
+      title: 'Writing',
+    },
+    {
+      name: 'media',
+      title: 'Media',
+    },
   ],
   fields: [
     {
@@ -33,14 +34,12 @@ export default {
       name: 'slug',
       type: 'slug',
       options: { source: 'title' },
-     
     },
     {
       name: 'biography',
       title: 'Biography',
       type: 'biography',
       group: 'biography',
-     
     },
     {
       name: 'cv',
@@ -62,13 +61,11 @@ export default {
               { title: 'Underline', value: 'underline' },
               { title: 'Code', value: 'code' },
             ],
-           
           },
         },
       ],
       description: 'The main content of the CV, supporting rich text and HTML.',
     },
-
     {
       name: 'writing',
       title: 'Writing',
@@ -129,21 +126,97 @@ export default {
           ],
         },
       ],
-    }    
+    },
+    {
+      name: 'slider',
+      title: 'Slider',
+      type: 'array',
+      group: 'media',
+      of: [
+        {
+          type: 'object',
+          name: 'slide',
+          title: 'Slide',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'array',
+              of: [
+                {
+                  type: 'block',
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'Italic', value: 'italic' },
+                    { title: 'Heading 1', value: 'h1' },
+                    { title: 'Heading 2', value: 'h2' },
+                    { title: 'Heading 3', value: 'h3' },
+                  ],
+                  lists: [],
+                  marks: {
+                    decorators: [
+                      { title: 'Italic', value: 'em' },
+                      { title: 'Bold', value: 'strong' },
+                      { title: 'Underline', value: 'underline' },
+                      { title: 'Strikethrough', value: 'strike-through' },
+                    ],
+                    annotations: [
+                      {
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        fields: [
+                          {
+                            name: 'href',
+                            title: 'URL',
+                            type: 'url',
+                            validation: (Rule) =>
+                              Rule.uri({
+                                scheme: ['http', 'https'],
+                              }),
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                },
+              ],
+              description:
+                'The title and additional details of the slide, allowing various text styles for emphasis.',
+              validation: (Rule) =>
+                Rule.required().error('Title is required.'),
+            },
+            {
+              name: 'slideImage',
+              title: 'Slide Image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+              description: 'Upload an image to display on the slide.',
+              validation: (Rule) =>
+                Rule.required().error('Slide Image is required.'),
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: 'qoute',
+      title: 'Qoute',
+      type: 'quote'
+    },
+
+
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'biography',
     },
-    prepare({ title, subtitle }) {
-      const plainText = subtitle
-        ? subtitle.filter(block => block._type === 'block').map(block => block.children.map(child => child.text).join('')).join(' ')
-        : 'No biography content';
-
+    prepare({ title }) {
       return {
         title: title || 'Information Page',
-        subtitle: plainText.substring(0, 50) + '...',
       };
     },
   },

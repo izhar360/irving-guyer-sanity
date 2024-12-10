@@ -6,7 +6,6 @@ export default {
   icon: MdOutlineWorkOutline,
   type: 'document',
   fields: [
-
     {
       name: 'title',
       title: 'Title',
@@ -17,15 +16,19 @@ export default {
       name: 'slug',
       type: 'slug',
       options: { source: 'title' },
-     
     },
-   
     {
       name: 'quote',
       title: 'Quote',
       type: 'quote',
       description: 'A quote to be displayed on the work page.',
     },
-   
+    {
+      name: 'collections',
+      title: 'Collections',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'collection' }] }],
+      description: 'Drag and drop to reorder collections.',
+    },
   ],
 };
